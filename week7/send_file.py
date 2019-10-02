@@ -19,9 +19,8 @@ def progress(percent):
 def main():
     parser = ArgumentParser(description="Send file")
     parser.add_argument('filename', type=str, help='Name of the file')
-    parser.add_argument('hostname', nargs='?', metavar=('hostname',), type=str, default='localhost',
-                        help='Name of the server')
-    parser.add_argument('port', nargs='?', type=int, metavar=('port',), default=8800, help='Port of the server')
+    parser.add_argument('hostname', type=str, help='Name of the server')
+    parser.add_argument('port', type=int, help='Port of the server')
 
     namespace = parser.parse_args()
     filename = namespace.filename
