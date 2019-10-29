@@ -1,8 +1,11 @@
+import datetime
+
 from flask import Flask, render_template, request, redirect
 import pymongo
 
 app = Flask(__name__)
-myclient = pymongo.MongoClient("mongodb://db3.local:27017/", replicaset="rs0")
+# myclient = pymongo.MongoClient("mongodb://db3.local:27017/", replicaset="rs0")
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 
 mydb = myclient["mydatabase"]
 mycol = mydb["messages"]
@@ -11,10 +14,13 @@ mycol = mydb["messages"]
 @app.route('/', methods=['GET', 'POST'])
 def sessions():
     if request.method == "POST":
-        x = mycol.insert_one(dict(request.form))
+        message = dict(request.form)
+        if message["name"] != "" and message["message"] != "":
+            message['timestamp'] = datetime.datetime.now()
+            mycol.insert_one(message)
         return redirect("/")
-    data = mycol.find().limit(10)
-    return render_template('session.html', data=data)
+    data = mycol.find().sort("timestamp")
+    return render_template('session.html', data=list(data))
 
 
 if __name__ == '__main__':
