@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flask_Chat_App</title>
+</head>
+<body>
+<div>
+    {% for name, message in result.iteritems() %}
+    {{ name }}:{{ message }}
+    {% endfor %}
+</div>
+<form action="" method="POST">
+    <input type="text" name="name" placeholder="Name"/>
+    <input type="text" name="message" placeholder="Messages"/>
+    <input type="submit" value="Send Message"/>
+</form>
+</body>
+</html>
+
