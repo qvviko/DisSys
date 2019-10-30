@@ -1,8 +1,13 @@
 # Lab 9. Distributed System
 Done by Vladislav Savchuk DS-01
+
+The application is in the same dir as this readme.md, you can check the code there.
+
+This is result of the setup and everything that was asked to be included in the readme can be found below
+
 ## First spam bit
 ### rs.status() output
-```json
+```jsonld=
 {
         "set" : "rs0",
         "date" : ISODate("2019-10-30T17:44:38.446Z"),
@@ -152,7 +157,7 @@ Done by Vladislav Savchuk DS-01
 ```
 
 ### rs.config() output
-```json
+```jsonld=
 {
         "_id" : "rs0",
         "version" : 1,
@@ -222,7 +227,7 @@ Done by Vladislav Savchuk DS-01
 
 ## After removing VPS with primary mongodb  instance
 ### rs.status() output
-```json
+```jsonld=
 {
         "set" : "rs0",
         "date" : ISODate("2019-10-30T17:54:10.767Z"),
@@ -372,7 +377,7 @@ Done by Vladislav Savchuk DS-01
 ```
 
 ### rs.config() output
-```json
+```jsonld=
 {
         "_id" : "rs0",
         "version" : 1,
