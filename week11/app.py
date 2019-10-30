@@ -4,8 +4,8 @@ from flask import Flask, render_template, request, redirect
 import pymongo
 
 app = Flask(__name__)
-# myclient = pymongo.MongoClient("mongodb://db3.local:27017/", replicaset="rs0")
-myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+myclient = pymongo.MongoClient("mongodb://db1.local:27017, db2.local:27017, db3.local:27017",
+                               replicaset="rs0")
 
 mydb = myclient["mydatabase"]
 mycol = mydb["messages"]
@@ -24,4 +24,4 @@ def sessions():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=80, debug=True)

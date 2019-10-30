@@ -24,15 +24,16 @@
                                 <div class="card">
                                     <div class="card-header">Chatbox</div>
                                     <div class="card-body">
-                                        <dl id="messageList">
+                                        <dl>
                                             {% for x in data %}
                                             <dd>
-                                                [{{x["timestamp"].strftime("%H:%M")}}] <b>{{ x["name"] }}</b>: {{ x["message"] }}
+                                                [{{x["timestamp"].strftime("%H:%M")}}] <b>{{ x["name"] }}</b>: {{
+                                                x["message"] }}
                                             </dd>
                                             {% endfor %}
                                         </dl>
                                         <hr>
-                                        <form id="sendMessage" method="post">
+                                        <form method="post">
                                             <div class='input-group'>
                                                 <input type="text" name="name" placeholder="Name"/>
                                                 <input type="text" name="message" placeholder="Message"/>
