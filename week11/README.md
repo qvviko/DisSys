@@ -4,8 +4,11 @@ Done by Vladislav Savchuk DS-01
 The application is in the same dir as this readme.md, you can check the code there.
 
 This is result of the setup and everything that was asked to be included in the readme can be found below
+## App
+To start up you can simply run `pip3 install -r requirements.txt` and then `python3 app.py`
 
-## First spam bit
+You can also start with docker by `docker run -p 80:80 --network=host qvviko/ds_lab9` or use Dockerfile inside the repository.
+## After setting up replicas by guide we spam a bit
 ### rs.status() output
 ```jsonld=
 {
